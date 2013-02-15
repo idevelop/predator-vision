@@ -1,0 +1,40 @@
+body {		
+	padding: 50px;
+	background: black;
+}
+
+h1 {
+	font-family: 'Helvetica neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: 48px;
+	font-weight: 300;
+	color: #666;
+	text-align: center;
+}
+
+.notSupported {
+	display: none;
+}
+
+.notSupported h1 {
+	color: #b41a1a;
+	margin-bottom: 20px;
+}
+
+.notSupported img {
+	display: block;
+	margin: 0 auto;
+}
+
+canvas {
+	display: block;
+	width: 640px;
+	height: 480px;
+	margin: 0 auto;
+}
+
+#fork {
+	 position: absolute; 
+	 top: 0; 
+	 right: 0; 
+	 border: 0;
+}
