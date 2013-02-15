@@ -10,7 +10,7 @@
 	var heatmap;
 	var heatmapDecay = 250; // higher values => faster decay
 	var heatmapPointSize = 6;
-	var heatmapPointIntensity = 10 / 255;
+	var heatmapPointIntensity = 20 / 255;
 	var heatmapCanvas = document.getElementById('heatmap');
 
 	camera.init({
