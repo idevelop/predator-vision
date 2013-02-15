@@ -11,6 +11,7 @@
 	var heatmapDecay = 250; // higher values => faster decay
 	var heatmapPointSize = 6;
 	var heatmapPointIntensity = 10 / 255;
+	var heatmapCanvas = document.getElementById('heatmap');
 
 	camera.init({
 		// downscale video for performance reasons
@@ -43,11 +44,12 @@
 
 			try {
 				heatmap = createWebGLHeatmap({
-					canvas: document.getElementById('heatmap')
+					canvas: heatmapCanvas
 				});
 			} catch (exception) {
 				// webgl not supported
 				camera.stop();
+				heatmapCanvas.style.display = "none";
 				document.getElementById("webGLNotSupported").style.display = "block";
 			}
 		},
@@ -56,6 +58,7 @@
 
 		onNotSupported: function() {
 			document.getElementById("info").style.display = "none";
+			heatmapCanvas.style.display = "none";
 			document.getElementById("cameraNotSupported").style.display = "block";
 		}
 	});
