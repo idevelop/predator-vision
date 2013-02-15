@@ -8,12 +8,15 @@
 
 (function() {
 	var heatmap;
-	var decay = 220;
+	var heatmapDecay = 250; // higher values => faster decay
+	var heatmapPointSize = 6;
+	var heatmapPointIntensity = 10 / 255;
 
 	camera.init({
-		// downscale for performance reasons
+		// downscale video for performance reasons
 		width: 320,
 		height: 240,
+
 		fps: 60,
 		mirror: true,
 
@@ -23,18 +26,21 @@
 				movement.fromCanvas(canvas, {
 					callback: function(updateList) {
 						for (var i = 0; i < updateList.length; i++) {
-							heatmap.addPoint(updateList[i].x * 2, updateList[i].y * 2, 6, 10 / 255);
+							heatmap.addPoint(updateList[i].x * 2, updateList[i].y * 2, heatmapPointSize, heatmapPointIntensity);
 						}
 					}
 				});
 
+				// update, decay, etc
 	            heatmap.update();
-	            heatmap.multiply(1 - decay / (100 * 100));
+	            heatmap.multiply(1 - heatmapDecay / (100 * 100));
 	            heatmap.display();
 			}
 		},
 
 		onSuccess: function() {
+			document.getElementById("info").style.display = "none";
+
 			try {
 				heatmap = createWebGLHeatmap({
 					canvas: document.getElementById('heatmap')
@@ -44,8 +50,6 @@
 				camera.stop();
 				document.getElementById("webGLNotSupported").style.display = "block";
 			}
-
-			document.getElementById("info").style.display = "none";
 		},
 
 		onError: console.error,
