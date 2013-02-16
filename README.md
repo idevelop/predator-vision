@@ -21,7 +21,7 @@ Predator Vision uses the HTML5 getUserMedia API and WebGL to transform a video s
 
 ## Libraries used
 
-* The heatmap is produced using the [WebGL heatmap library](http://codeflow.org/entries/2013/feb/04/high-performance-js-heatmaps/), created by [Florian Boesch](https://github.com/pyalot).
+* The heatmap is produced using the [WebGL heatmap library](http://codeflow.org/entries/2013/feb/04/high-performance-js-heatmaps/), created by [Florian Bösch](https://github.com/pyalot).
 * The movement detection code is adapted and optimized from the [magic xylophone](http://www.adobe.com/devnet/html5/articles/javascript-motion-detection.html).
 
 ## License
