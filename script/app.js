@@ -33,9 +33,9 @@
 				});
 
 				// update, decay, etc
-	            heatmap.update();
-	            heatmap.multiply(1 - heatmapDecay / (100 * 100));
-	            heatmap.display();
+				heatmap.update();
+				heatmap.multiply(1 - heatmapDecay / (100 * 100));
+				heatmap.display();
 			}
 		},
 
