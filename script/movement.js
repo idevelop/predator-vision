@@ -60,6 +60,8 @@ var movement = (function() {
 		return (value ^ (value >> 31)) - (value >> 31);
 	}
 
+	function doNothing(){}
+
 	return {
 		fromCanvas: function(canvas, options) {
 			options = options || {};
