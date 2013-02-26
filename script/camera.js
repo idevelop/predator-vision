@@ -18,7 +18,7 @@ var camera = (function() {
 			}, function(stream) {
 				options.onSuccess();
 
-				if (video.mozCaptureStream) { // hack for Mozilla
+				if (video.mozSrcObject !== undefined) { // hack for Mozilla
 					video.mozSrcObject = stream;
 				} else {
 					video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
