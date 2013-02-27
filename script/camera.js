@@ -17,6 +17,8 @@ var camera = (function() {
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 		window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
 
+		alert(navigator.getUserMedia);
+
 		if (navigator.getUserMedia) {
 			navigator.getUserMedia({
 				video: true
@@ -75,6 +77,8 @@ var camera = (function() {
 
 	return {
 		init: function(options) {
+			alert("init");
+
 			var doNothing = function(){};
 
 			options = options || {};
