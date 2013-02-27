@@ -1,11 +1,9 @@
 // Author: Andrei Gheorghe (http://github.com/idevelop)
+// Version: 1.0 (27.02.2013)
 
 var camera = (function() {
-	var doNothing = function(){};
-	var video;
-
 	function initCamera(options) {
-		video = document.createElement("video");
+		var video = document.createElement("video");
 		video.setAttribute('width', options.width);
 		video.setAttribute('height', options.height);
 
@@ -18,12 +16,12 @@ var camera = (function() {
 			}, function(stream) {
 				options.onSuccess();
 
-				if (video.mozSrcObject !== undefined) { // hack for Mozilla
+				if (video.mozSrcObject !== undefined) { // hack for Firefox < 19
 					video.mozSrcObject = stream;
 				} else {
 					video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
 				}
-
+				
 				startVideoStream(video, options);
 			}, options.onError);
 		} else {
@@ -58,12 +56,14 @@ var camera = (function() {
 
 	return {
 		init: function(options) {
+			var doNothing = function(){};
+
 			options = options || {};
 			options.fps = options.fps || 30;
 			options.width = options.width || 640;
 			options.height = options.height || 480;
 			options.mirror = options.mirror || false;
-			options.targetCanvas = options.targetCanvas || null;
+			options.targetCanvas = options.targetCanvas || null; // TODO: is the element actually a <canvas> ?
 
 			options.onSuccess = options.onSuccess || doNothing;
 			options.onError = options.onError || doNothing;
@@ -75,7 +75,7 @@ var camera = (function() {
 
 		stop: function() {
 			video.pause();
-			
+
 			if (video.mozSrcObject !== undefined) {
 				video.mozSrcObject = null;
 			} else {
