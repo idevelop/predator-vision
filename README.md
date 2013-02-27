@@ -18,6 +18,7 @@ If your browser is not supported you can watch a [demo video](http://www.youtube
 
 **Andrei Gheorghe**
 
+* [About me](http://idevelop.github.com)
 * LinkedIn: [linkedin.com/in/idevelop](http://www.linkedin.com/in/idevelop)
 * Twitter: [@idevelop](http://twitter.com/idevelop)
 
