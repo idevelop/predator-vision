@@ -13,6 +13,7 @@ If your browser is not supported you can watch a [demo video](http://www.youtube
 
 * Chrome &ge; 21
 * Firefox &ge; 17 (requires `media.navigator.enabled = true` in `about:config`)
+* Opera &ge; 12
 
 ## Author
 
