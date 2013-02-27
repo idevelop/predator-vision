@@ -15,6 +15,12 @@ If your browser is not supported you can watch a [demo video](http://www.youtube
 * Firefox &ge; 17 (requires `media.navigator.enabled = true` in `about:config`)
 * Opera &ge; 12
 
+## Libraries used
+
+* Camera input is done using the [camera.js library](https://github.com/idevelop/camera.js).
+* The heatmap is produced using the [WebGL heatmap library](http://codeflow.org/entries/2013/feb/04/high-performance-js-heatmaps/), created by [Florian Bösch](https://github.com/pyalot).
+* The movement detection code is adapted and optimized from the [magic xylophone](http://www.adobe.com/devnet/html5/articles/javascript-motion-detection.html).
+
 ## Author
 
 **Andrei Gheorghe**
@@ -22,11 +28,6 @@ If your browser is not supported you can watch a [demo video](http://www.youtube
 * [About me](http://idevelop.github.com)
 * LinkedIn: [linkedin.com/in/idevelop](http://www.linkedin.com/in/idevelop)
 * Twitter: [@idevelop](http://twitter.com/idevelop)
-
-## Libraries used
-
-* The heatmap is produced using the [WebGL heatmap library](http://codeflow.org/entries/2013/feb/04/high-performance-js-heatmaps/), created by [Florian Bösch](https://github.com/pyalot).
-* The movement detection code is adapted and optimized from the [magic xylophone](http://www.adobe.com/devnet/html5/articles/javascript-motion-detection.html).
 
 ## License
 
