@@ -76,7 +76,7 @@ var camera = (function() {
 		stop: function() {
 			video.pause();
 			
-			if (video.mozCaptureStream) {
+			if (video.mozSrcObject !== undefined) {
 				video.mozSrcObject = null;
 			} else {
 				video.src = "";
