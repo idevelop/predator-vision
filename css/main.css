@@ -32,7 +32,8 @@ canvas {
 	margin: 0 auto;
 }
 
-#fork {
+#fork, 
+#idevelop {
 	display: block;
 	position: fixed;
 	z-index: 10;
@@ -42,6 +43,8 @@ canvas {
 	padding: 10px 50px 10px 10px;
 	
 	background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
+	border: 1px solid #0090ff;
+	border-top: 0;
 
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 500;
@@ -53,6 +56,20 @@ canvas {
 	border-bottom-right-radius: 3px;
 }
 
-#fork:hover {
+#fork:hover, 
+#idevelop:hover {
 	text-decoration: underline;
+}
+
+#idevelop {
+	opacity: 0.4;
+	border: 1px solid #eee;
+	border-top: 0;
+	color: #333;
+	right: 200px;
+	background: url('../images/idevelop.png') #fff no-repeat 95% 50%;	
+}
+
+#idevelop:hover {
+	opacity: 1;
 }
