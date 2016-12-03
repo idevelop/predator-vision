@@ -3,7 +3,7 @@ Predator Vision
 
 Predator Vision uses the HTML5 getUserMedia API and WebGL to transform a video stream from your webcam into a real-time movement-triggered heatmap representation. 
 
-**[See it in action](http://idevelop.github.com/predator-vision)**.
+**[See it in action](https://idevelop.ro/predator-vision/)**.
 
 If your browser is not supported you can watch a [demo video](http://www.youtube.com/watch?v=a_4ZhcT9hSs).
 
