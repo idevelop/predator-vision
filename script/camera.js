@@ -34,17 +34,17 @@ var camera = (function() {
 					video.srcObject = stream;
 				}
 
-				initCanvas();
+				initCanvas(video);
 			}, options.onError);
 		} else {
 			options.onNotSupported();
 		}
 	}
 
-	function initCanvas() {
+	function initCanvas(video) {
 		canvas = options.targetCanvas || document.createElement("canvas");
-		canvas.setAttribute('width', options.width);
-		canvas.setAttribute('height', options.height);
+		canvas.setAttribute('width', video.width);
+		canvas.setAttribute('height', video.height);
 
 		context = canvas.getContext('2d');
 
@@ -74,7 +74,7 @@ var camera = (function() {
 		if (video.mozSrcObject !== undefined) {
 			video.mozSrcObject = null;
 		} else {
-			video.src = "";
+			video.srcObject = null;
 		}
 	}
 
