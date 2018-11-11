@@ -15,6 +15,8 @@ var camera = (function() {
 		video = document.createElement("video");
 		video.setAttribute('width', options.width);
 		video.setAttribute('height', options.height);
+		video.setAttribute('playsinline', 'true');
+		video.setAttribute('webkit-playsinline', 'true');
 
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
 		window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
