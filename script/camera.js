@@ -21,14 +21,15 @@ var camera = (function() {
 
 		if (navigator.getUserMedia) {
 			navigator.getUserMedia({
-				video: true
+				video: true,
+				audio: false,
 			}, function(stream) {
 				options.onSuccess();
 
 				if (video.mozSrcObject !== undefined) { // hack for Firefox < 19
 					video.mozSrcObject = stream;
 				} else {
-					video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+					video.srcObject = stream;
 				}
 
 				initCanvas();
