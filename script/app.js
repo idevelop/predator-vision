@@ -12,6 +12,7 @@
 	var heatmapPointSize = 6;
 	var heatmapPointIntensity = 20 / 255;
 	var heatmapCanvas = document.getElementById('heatmap');
+	var capturing = false;
 
 	camera.init({
 		// downscale video for performance reasons
@@ -41,6 +42,19 @@
 
 		onSuccess: function() {
 			document.getElementById("info").style.display = "none";
+
+			const button = document.getElementById("button");
+			button.style.display = "block";
+			button.onclick = function() {
+				if (capturing) {
+					camera.pause();
+					button.innerText = 'resume';
+				} else {
+					camera.start();
+					button.innerText = 'pause';
+				}
+				capturing = !capturing;
+			};
 
 			try {
 				heatmap = createWebGLHeatmap({
